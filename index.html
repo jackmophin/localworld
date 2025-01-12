@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Font Example</title>
+    <style>
+        @font-face {
+    font-family: 'CustomFont';
+    src: url('https://jackmophin.github.io/localworld/ocrabeckerrus_lat.otf') format('opentype');
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: never;
+    text-rendering: optimizeLegibility;
+}
+
+.text-container {
+    font-family: 'CustomFont', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    color: red;
+    filter: hue-rotate(0deg);
+}
+
+    </style>
+</head>
+<body>
+    <div class="text-container">
+     <o id='x'>Localworld TV</o>
+    </div>
+    <script>
+        let z = 0;
+        function x() {
+            document.getElementById("x").style.filter = `hue-rotate(${z}deg)`
+            z += 5
+            requestAnimationFrame(x)
+        }
+        
+        requestAnimationFrame(x)
+    </script>
+</body>
+</html>
